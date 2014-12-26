@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+#
+
+require 'md2dz'
+
+begin
+  doc = Kramdown::Document.new(ARGF.read)
+  result = ''
+  result = doc.to_Dzbbcode
+  puts result
+  doc.warnings.each {|warn| $stderr.puts "Warning: #{warn}"}
+rescue Kramdown::Error => e
+  $stderr.puts "Error: #{e.message}"
+  exit(1)
+end
