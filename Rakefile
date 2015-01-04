@@ -6,6 +6,5 @@ task :build do
 end
  
 task :install => :build do
-  s = Gem::Specification::load('md2dz.gemspec')
-  system "gem install --local ./md2dz-#{s.version}.gem"
+  system 'bundle install'
 end
