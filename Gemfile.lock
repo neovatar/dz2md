@@ -1,9 +1,3 @@
-PATH
-  remote: .
-  specs:
-    md2dz (0.1.0)
-      kramdown (~> 1.5)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -14,4 +8,3 @@ PLATFORMS
 
 DEPENDENCIES
   kramdown (~> 1.5)
-  md2dz!

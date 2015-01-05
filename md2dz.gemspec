@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'md2dz'
-  s.version     = '0.1.0'
+  s.version     = '0.2.0'
   s.date        = '2014-12-27'
   s.summary     = 'Convert markdown to Drachenzwinge BBCode.'
   s.description = 'Convert markdown to Drachenzwinge BBCode.'

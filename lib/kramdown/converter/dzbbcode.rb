@@ -73,6 +73,10 @@ module Kramdown
         tag("list", nil, inner(el, opts))
       end
 
+      def convert_ol(el, opts)
+        tag("list", {'type' => 'decimal'}, inner(el, opts))
+      end
+
       def convert_li(el, opts)
         tag("li", nil, inner(el, opts))
       end
@@ -136,7 +140,12 @@ module Kramdown
 
       def tag(name, arg, content)
         if arg
-          ["[#{name}=#{arg}]", content, "[/#{name}]"]
+          if arg.is_a?(Hash)
+            argmap = arg.map{|k,v| "#{k}=#{v}"}.join(' ')
+            ["[#{name} #{argmap}]", content, "[/#{name}]"]
+          else
+            ["[#{name}=#{arg}]", content, "[/#{name}]"]
+          end
         else
           ["[#{name}]", content, "[/#{name}]"]
         end
